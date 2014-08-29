@@ -1,7 +1,7 @@
 ﻿<Window x:Class="FavoImgs_Helper.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="관트짤줍 헬퍼" Height="160" Width="530" ResizeMode="CanMinimize" Loaded="MainWindow_Loaded">
+        Title="관트짤줍 헬퍼" Height="185" Width="530" ResizeMode="CanMinimize" Loaded="MainWindow_Loaded">
     <Grid>
         <Button Content="트윗 전부 가져오기" Margin="10,97,0,0" VerticalAlignment="Top" Click="btnGetAll_Click" ToolTip="트위터에서 가져올 수 있는 최대한의 트윗을 가져옵니다." HorizontalAlignment="Left" Width="499"/>
         <Label Content="대상" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
@@ -18,6 +18,7 @@
         <Button x:Name="btnPathReset" Content="경로 초기화" HorizontalAlignment="Left" Margin="434,40,0,0" VerticalAlignment="Top" Width="75" Height="27" Click="btnPathReset_Click"/>
         <CheckBox x:Name="ckCont" Content="이어서" HorizontalAlignment="Left" Margin="10,75,0,0" VerticalAlignment="Top" ToolTip="최근 1000개 이전의 관심글에 이어서 첨부 이미지를 다운로드 받습니다."/>
         <Button Content="가져오기" HorizontalAlignment="Left" Margin="71,72,0,0" VerticalAlignment="Top" Width="438" Click="btnGet_Click"/>
+        <Label Content="피드백 : @niceb5y" HorizontalAlignment="Left" Margin="10,122,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
