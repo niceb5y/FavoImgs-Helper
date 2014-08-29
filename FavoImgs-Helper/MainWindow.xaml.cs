@@ -98,7 +98,8 @@ namespace FavoImgs_Helper
             {
                 Args += "--path=\"" + lblPath.Content + "\"";
             }
-            System.Windows.MessageBox.Show(Args);
+            //System.Windows.MessageBox.Show(Args);
+            RunFavoImgs(Args);
         }
     }
 }
