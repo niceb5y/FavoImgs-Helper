@@ -35,10 +35,6 @@ namespace FavoImgs_Helper
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            if (!File.Exists(System.Environment.CurrentDirectory + "\\Cache.db"))
-            {
-                File.Create(System.Environment.CurrentDirectory + "\\Cache.db");
-            }
             if (!File.Exists(System.Environment.CurrentDirectory + "\\FavoImgs.exe"))
             {
                 System.Windows.MessageBox.Show("FavoImgs Do Not Exist.");
