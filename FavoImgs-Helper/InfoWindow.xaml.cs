@@ -37,6 +37,7 @@ namespace FavoImgs_Helper
         private void btnOnlineHelp_Click(object sender, RoutedEventArgs e)
         {
             System.Diagnostics.Process.Start("explorer.exe", "https://niceb5y.net/blog/favoimgs-helper");
+            this.Close();
         }
     }
 }
