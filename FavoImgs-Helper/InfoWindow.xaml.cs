@@ -33,5 +33,10 @@ namespace FavoImgs_Helper
         {
             lblVersion.Content = "버전 V" + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
         }
+
+        private void btnOnlineHelp_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("explorer.exe", "https://niceb5y.net/blog/favoimgs-helper");
+        }
     }
 }
