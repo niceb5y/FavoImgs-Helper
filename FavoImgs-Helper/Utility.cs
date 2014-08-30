@@ -10,6 +10,7 @@ namespace FavoImgs_Helper
     {
         public static void downloadFile(string Path, params string[] Addresses)
         {
+            //구성요소 자동 다운로드를 위한 파일 다운로드 함수
             WebClient webCL = new WebClient();
             if (Path.EndsWith("\\") == false)
             {
