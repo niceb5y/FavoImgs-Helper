@@ -1,0 +1,11 @@
+﻿<Window x:Name="_InfoWindow" x:Class="FavoImgs_Helper.InfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Height="140" Width="300" Title="관트짤줍 헬퍼 : 정보" Topmost="True" WindowStartupLocation="CenterOwner" WindowStyle="ToolWindow" ResizeMode="NoResize" ShowInTaskbar="False" Loaded="InfoWindow_Loaded">
+    <Grid>
+        <Label Content="관트짤줍 헬퍼 - 관트짤줍 GUI 프론트엔드" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblVersion" Content="버전 V" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="275"/>
+        <Label Content="제작자 : @niceb5y" HorizontalAlignment="Left" Margin="10,76,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnClose" Content="닫기" HorizontalAlignment="Left" Margin="126,75,0,0" VerticalAlignment="Top" Width="158" Height="27" Click="btnClose_Click"/>
+
+    </Grid>
+</Window>

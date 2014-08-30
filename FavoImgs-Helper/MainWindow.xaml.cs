@@ -90,12 +90,18 @@ namespace FavoImgs_Helper
                     Args += "--slug=\"" + txtListName.Text + "\" ";
                 }
             }
-            if (lblPath.Content != "")
+            if ((string)lblPath.Content != "")
             {
                 Args += "--path=\"" + lblPath.Content + "\"";
             }
             //System.Windows.MessageBox.Show(Args);
             RunFavoImgs(Args);
+        }
+
+        private void menuInfo_Click(object sender, RoutedEventArgs e)
+        {
+            InfoWindow _infoWindow = new InfoWindow();
+            _infoWindow.Show();
         }
     }
 }
