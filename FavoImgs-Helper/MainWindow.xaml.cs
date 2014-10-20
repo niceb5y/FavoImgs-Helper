@@ -52,11 +52,12 @@ namespace FavoImgs_Helper
                 System.Windows.MessageBox.Show("관트짤줍 다운로드 완료.");
                 */
             }
+            /*관트짤줍이 알아서 하도록
             if (!File.Exists(System.Environment.CurrentDirectory + "\\Cache.db"))
             {
                 //Cache.db가 없으면 데이터 베이스 연결에 실패하였다며 진행되지 않으므로, 빈 파일을 생성
                 File.Create(System.Environment.CurrentDirectory + "\\Cache.db").Close();
-            }
+            }*/
         }
 
         private void btnPathReset_Click(object sender, RoutedEventArgs e)
@@ -87,22 +88,22 @@ namespace FavoImgs_Helper
             txtListName.IsEnabled = false;
         }
 
-        private void btnGetAll_Click(object sender, RoutedEventArgs e)
+        private void cbSoneone_Selected(object sender, RoutedEventArgs e)
         {
-            //모든 트윗 가져오기
-            //Rub_GetThemAll.cmd에 대응
-            RunFavoImgs("--all");
+            //특정 인물 텍스트박스 활성화
+            txtAccount.IsEnabled = true;
+        }
+
+        private void cbSomeone_Unselected(object sender, RoutedEventArgs e)
+        {
+            //특정 인물 텍스트박스 비활성화
+            txtAccount.IsEnabled = false;
         }
 
         private void btnGet_Click(object sender, RoutedEventArgs e)
         {
             //옵션 변수 생성
             string Args = null;
-            //이어서 받기 옵션
-            if (ckCont.IsChecked == true)
-            {
-                Args += "--continue ";
-            }
             //소스 옵션
             Args += "--source=" + ((ComboBoxItem)cbSource.SelectedItem).Content.ToString() + " ";
             //리스트 이름 옵션
@@ -121,7 +122,24 @@ namespace FavoImgs_Helper
             //경로옵션
             if ((string)lblPath.Content != "")
             {
-                Args += "--path=\"" + lblPath.Content + "\"";
+                Args += "--path=\"" + lblPath.Content + "\" ";
+            }
+            //특정인물 옵션
+            if (cbSomeone.IsChecked == true)
+            {
+                if (txtAccount.Text == "")
+                {
+                    System.Windows.MessageBox.Show("짤줍할 계정의 이름을 입력하세요.");
+                    return;
+                }
+                else
+                {
+                    Args += "--screen_name=" + txtAccount.Text + " ";
+                }
+            }
+            if (cbExclude.IsChecked == true)
+            {
+                Args += "--exclude_rts";
             }
             //실행
             RunFavoImgs(Args);
