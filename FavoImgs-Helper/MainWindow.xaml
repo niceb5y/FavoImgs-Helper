@@ -4,13 +4,14 @@
         Title="관트짤줍 헬퍼" Height="166" Width="530" ResizeMode="CanMinimize" Loaded="MainWindow_Loaded">
     <Grid>
         <Label Content="대상" HorizontalAlignment="Left" Margin="10,23,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cbSource" HorizontalAlignment="Left" Margin="49,23,0,0" VerticalAlignment="Top" Width="120" Height="26">
+        <ComboBox x:Name="cbSource" HorizontalAlignment="Left" Margin="49,23,0,0" VerticalAlignment="Top" Width="160" Height="26" SelectionChanged="cbSource_SelectionChanged">
             <ComboBoxItem Cursor="" Content="favorites" ToolTip="관심글에서 가져옵니다." IsSelected="True"/>
             <ComboBoxItem Cursor="" Content="tweets" ToolTip="내가 작성한 트윗에서 가져옵니다."/>
-            <ComboBoxItem Cursor="" Content="list" ToolTip="리스트에서 가져옵니다." Selected="cbList_Selected" Unselected="cbList_Unselected"/>
+            <ComboBoxItem Cursor="" Content="list" ToolTip="리스트에서 가져옵니다."/>
+            <ComboBoxItem Cursor="" Content="hashtag" ToolTip="해시태그에서 가져옵니다."/>
         </ComboBox>
-        <Label Content="리스트 이름" HorizontalAlignment="Left" Margin="174,23,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtListName" HorizontalAlignment="Left" Height="26" Margin="253,23,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="256" IsEnabled="False"/>
+        <Label Content="이름" HorizontalAlignment="Left" Margin="214,23,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="26" Margin="253,23,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="256" IsEnabled="False"/>
         <Label Content="경로" HorizontalAlignment="Left" Margin="10,54,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblPath" Content="" HorizontalAlignment="Left" Margin="49,54,0,0" VerticalAlignment="Top" Width="430" ToolTip="비어 있으면 관트짤줍의 설정을 따릅니다."/>
         <Button x:Name="btnSetPath" Content="..." HorizontalAlignment="Left" Margin="484,54,0,0" VerticalAlignment="Top" Width="25" Height="27" Click="btnSetPath_Click"/>
@@ -23,8 +24,9 @@
             </MenuItem>
         </Menu>
         <CheckBox x:Name="cbSomeone" Content="특정 인물" HorizontalAlignment="Left" Margin="10,85,0,0" VerticalAlignment="Top" Checked="cbSoneone_Selected" Unchecked="cbSomeone_Unselected"/>
-        <TextBox x:Name="txtAccount" HorizontalAlignment="Left" Height="23" Margin="87,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="333" IsEnabled="False" ToolTip="계정의 이름을 입력하세요."/>
+        <TextBox x:Name="txtAccount" HorizontalAlignment="Left" Height="23" Margin="87,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="284" IsEnabled="False" ToolTip="계정의 이름을 입력하세요."/>
         <CheckBox x:Name="cbExclude" Content="리트윗 제외" HorizontalAlignment="Left" Margin="425,85,0,0" VerticalAlignment="Top" ToolTip="리트윗을 제외합니다."/>
+        <CheckBox x:Name="cbGroup" Content="그룹" HorizontalAlignment="Left" Margin="376,85,0,0" VerticalAlignment="Top" ToolTip=" 해당 트윗을 작성한 사람의 계정 이름으로 폴더를 만들고 그곳에 파일을 저장합니다. " IsChecked="True"/>
 
     </Grid>
 </Window>
